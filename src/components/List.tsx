@@ -27,14 +27,14 @@ function List(props: FormProps) {
 
             switch(data.type){
                 case "sommer": list.push({name: "T-Shirt", anzahl: Math.ceil(data.days*data.hygiene/5)}, {name: "Pullover", anzahl: Math.ceil(data.days*data.hygiene/5/4)}, {name: "kurze Hose", anzahl: Math.ceil(data.days*data.hygiene/5/4)}); break;
-                case "winter": list.push({name: "T-Shirt", anzahl: Math.ceil(data.days*data.hygiene/5/3)}, {name: "Pullover", anzahl: Math.ceil(data.days*data.hygiene/5/3)}, {name: "lange Hose", anzahl: Math.ceil(data.days*data.hygiene/5/4)}); break;
-                case "zwischen": list.push({name: "T-Shirt", anzahl: Math.ceil(data.days*data.hygiene/5/2)}, {name: "Pullover", anzahl: Math.ceil(data.days*data.hygiene/5/4)}, {name: "kurze Hose", anzahl: Math.ceil(data.days*data.hygiene/5/5)}, {name: "lange Hose", anzahl: Math.ceil(data.days*data.hygiene/5/5)}); break;
+                case "zwischen": list.push({name: "T-Shirt", anzahl: Math.ceil(data.days*data.hygiene/5/3)}, {name: "Pullover", anzahl: Math.ceil(data.days*data.hygiene/5/3)}, {name: "lange Hose", anzahl: Math.ceil(data.days*data.hygiene/5/4)}); break;
+                case "winter": list.push({name: "T-Shirt", anzahl: Math.ceil(data.days*data.hygiene/5/2)}, {name: "Pullover", anzahl: Math.ceil(data.days*data.hygiene/5/4)}, {name: "kurze Hose", anzahl: Math.ceil(data.days*data.hygiene/5/5)}, {name: "lange Hose", anzahl: Math.ceil(data.days*data.hygiene/5/5)}); break;
             }
 
             if(data.type === "winter"){
-                list.push({name: "Winterjacke", anzahl: 1});
+                list.push({name: "Winterjacke"});
             }else if(data.type === "zwischen"){
-                list.push({name: "dünne Jacke", anzahl: 1});
+                list.push({name: "dünne Jacke"});
             }
 
             switch(data.weather){
