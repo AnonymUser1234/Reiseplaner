@@ -11,7 +11,7 @@ const defaultJourney: Journey = {
     gender: "male",
     hygiene: 5,
     days: 0,
-    type:  "strand",
+    type:  "sommer",
     weather: "good"
 }
 
@@ -33,12 +33,15 @@ function Form(props: FormProps) {
 
     function handleChange(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>){
         setJourney((prev) => {
-            let value: string | number = event.target.value;
+            let value: string = event.target.value;
+            let myNumber: number = 0;
             if(event.target.name === "days") {
-                value = parseInt(value);
+                myNumber = parseInt(value);
+                return {...prev, [event.target.name]: myNumber}
             }
             if(event.target.name === "hygiene") {
-                value = parseInt(value);
+                myNumber = parseInt(value);
+                return {...prev, [event.target.name]: myNumber}
             }
             return {...prev, [event.target.name]: value}
         });
